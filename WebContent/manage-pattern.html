@@ -1,0 +1,75 @@
+<h2>Manage / Pattern</h2>
+<div id="managePatternCarousel" class="ink-carousel">
+    <ul class="stage column-group">
+    <li class="slide all-100">
+    <i id="managePatternPlus" class="fa fa-plus-square push-right" style="font-size:1.3em;color:green;margin-top:.1em;margin-right:.3em;margin-bottom:.5em;cursor:pointer;cursor:hand;" onclick="managePatternButtonPlusClick()"></i>
+    <table class="ink-table bordered hover alternating">
+  <thead>
+    <tr style="background-color:#7f7f7f;color:white;">
+    	<th class="align-center" >Channel</th>
+      <th class="align-center" style="width:7em;">Channel Code</th>
+      <th class="align-center" style="width:7em;">Channel Digit</th>
+      <th class="align-center" style="width:7em;">Pin Digit</th>
+      <th class="align-center" style="width:6em;"><i class='fa fa-pencil-square-o'></i></th><th class="align-center" style="width:6em;"><i class='fa fa-trash'></i></th>
+    </tr>
+  </thead>
+  <tbody id="tbodyPattern">
+  </tbody>
+</table>
+	<i id="managePatternPlus" class="fa fa-plus-square push-right" style="font-size:1.3em;color:green;margin-right:.3em;cursor:pointer;cursor:hand;" onclick="managePatternButtonPlusClick()"></i>
+    </li>
+    
+        <li class="slide all-100">
+        <h5 id="managePatternEditHead"></h5>
+        <div id="managePatternEditAlert"></div>
+<form id="formManagePattern" class="ink-form">
+<input id="patternId" name="patternId" type="hidden">
+<div class="control-group required">
+	<label for="channelName">Channel Name:</label>
+	<div class="control">
+	    <input id="channelName" name="channelName" class="ink-fv-required" style="width:15em;" type="text" placeholder="Channel" maxlength="100" >
+	</div>
+</div>
+<div class="control-group required">
+	<label for="channelCode">Channel Code:</label>
+	<div class="control">
+	    <input id="channelCode" name="channelCode" class="ink-fv-required ink-fv-number" style="width:15em;" type="text" placeholder="Channel Code" maxlength="15" >
+	</div>
+</div>
+<div class="control-group required">
+	<label for="channelDigit">Channel Digit:</label>
+	<div class="control">
+	    <input id="channelDigit" name="channelDigit" class="ink-fv-required ink-fv-number" style="width:15em;" type="text" placeholder="Channel Digit" maxlength="15" >
+	</div>
+</div>
+<div class="control-group required">
+	<label for="pinDigit">Pin Digit:</label>
+	<div class="control">
+	    <input id="pinDigit" name="pinDigit" class="ink-fv-required ink-fv-number" style="width:15em;" type="text" placeholder="Pin Digit" maxlength="15" onkeypress='return ((event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 188))' >
+	</div>
+</div><br/>
+	<input id="buttonUpdate" type="button" value="&nbsp;&nbsp;&nbsp;Add new&nbsp;&nbsp;&nbsp;" class="ink-button green" onclick="managePatternEditAddClick();">
+	<input id="buttonCancel" type="button" value="Cancel" class="ink-button red" onclick="managePatternEditGoBack()">
+</form><br/>
+        </li>
+    </ul>
+</div>
+<div class="ink-shade fade">
+    <div id="formManagePatternConfirm" class="ink-modal fade" data-trigger="#formManagePatternConfirmTrigger" data-width="500px" data-height="400px" role="dialog" aria-hidden="true" aria-labelled-by="modal-title">
+        <div class="modal-header">
+            <!-- <button class="modal-close ink-dismiss"></button>  -->
+            <h2 id="modal-title">Manage / Pattern</h2>
+        </div>
+        <div class="modal-body" id="modalContent"><div id="confirmMode" style="display:none;"></div><div id="confirmPatternId" style="display:none;"></div>
+            <h3>Please confirm</h3>
+            <div id="ManagePatternConfirmChannel"></div>
+            <div id="ManagePatternConfirmChannelCode"></div>
+            <div id="ManagePatternConfirmPinDigit"></div><br/>
+            <div id="ManagePatternConfirmMSG">Do you really want to save pattern?</div>
+        </div><br/>
+        <div class="modal-footer">
+        	<div class="push-left"><button id="buttonConfirm" class="ink-button ink-dismiss" onclick="managePatternConfirmClick()"></button></div>
+            <div class="push-right"><button class="ink-button ink-dismiss">&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;</button></div>
+        </div>
+    </div>
+</div>

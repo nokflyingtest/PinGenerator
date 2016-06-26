@@ -1,0 +1,65 @@
+<h2>Manage / Current Maximum Serial Number</h2>
+<div id="manageSerialCarousel" class="ink-carousel">
+    <ul class="stage column-group">
+<li class="slide all-100">
+<table class="ink-table bordered hover alternating">
+  <thead>
+    <tr style="background-color:#7f7f7f;color:white;">
+    <th class="align-center" >Channel</th>
+    <th class="align-center" style="width:7em;">Channel Code</th>
+    <th class="align-center" style="width:16em;">Current Maximum Serial Number</th>
+    <th class="align-center" style="width:6em;"><i class='fa fa-pencil-square-o'></i></th>
+    </tr>
+  </thead>
+  <tbody id="tbodySerial">
+  </tbody>
+</table>
+</li>
+    
+        <li class="slide all-100">
+        <h5 id="manageSerialEditHead"></h5>
+        <div id="manageSerialEditAlert"></div>
+        
+<form id="formManageSerial" class="ink-form">
+<input id="patternId" name="patternId" type="hidden">
+
+<div class="control-group column-group">
+	<label for="channelName" class="all-15">Channel Name:</label>
+	<div id="channelName" class="control all-85" style="color:red;padding-left:-20px"></div>
+</div>
+<div class="control-group column-group">
+	<label for="channelCode" class="all-15">Channel Code:</label>
+	<div id="channelCode" class="control all-85" style="color:red;padding-left:-20px"></div>
+</div>
+<div class="control-group required">
+	<label for="serial">Current Max Serial Number:</label>
+	<div class="control">
+	    <input id="serial" name="serial" class="ink-fv-required ink-fv-number" style="width:15em;" type="text" placeholder="serial" onkeypress='return isNumber(event)' onpaste='return false;'>
+	</div>
+</div>
+<br/>
+	<input id="buttonUpdate" type="button" value="&nbsp;&nbsp;&nbsp;Add new&nbsp;&nbsp;&nbsp;" class="ink-button green" onclick="manageSerialEditSaveClick();">
+	<input id="buttonCancel" type="button" value="Cancel" class="ink-button red" onclick="manageSerialEditGoBack()">
+</form><br/>
+        </li>
+    </ul>
+</div>
+<div class="ink-shade fade">
+    <div id="formManagePatternConfirm" class="ink-modal fade" data-trigger="#formManagePatternConfirmTrigger" data-width="500px" data-height="400px" role="dialog" aria-hidden="true" aria-labelled-by="modal-title">
+        <div class="modal-header">
+            <!-- <button class="modal-close ink-dismiss"></button>  -->
+            <h2 id="modal-title">Manage / Pattern</h2>
+        </div>
+        <div class="modal-body" id="modalContent"><div id="confirmMode" style="display:none;"></div><div id="confirmPatternId" style="display:none;"></div>
+            <h3>Please confirm</h3>
+            <div id="ManagePatternConfirmChannel"></div>
+            <div id="ManagePatternConfirmChannelCode"></div>
+            <div id="ManagePatternConfirmPinDigit"></div><br/>
+            <div id="ManagePatternConfirmMSG">Do you really want to save pattern?</div>
+        </div><br/>
+        <div class="modal-footer">
+        	<div class="push-left"><button id="buttonConfirm" class="ink-button ink-dismiss" onclick="managePatternConfirmClick()"></button></div>
+            <div class="push-right"><button class="ink-button ink-dismiss">&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;</button></div>
+        </div>
+    </div>
+</div>

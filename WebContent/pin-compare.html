@@ -1,0 +1,57 @@
+<h2>Compare PIN</h2>
+<div id="pinCompareCarousel" class="ink-carousel">
+    <ul class="stage column-group">
+        <li class="slide all-100">
+
+<form id="formComparePin" class="ink-form" style="width:50em;" enctype="multipart/form-data">
+<div class="control-group column-group required">
+<label for="fileIN" >File PIN History:</label>
+</div>
+<div class="control-group column-group">
+<div class="control append-button">
+<span><input id="fileIN" name="fileIN" style="width:15em;" type="text"></span>
+<input id="buttonBrowseFileIN" type="button" value="Browse" class="ink-button green" onclick="comparePinButtonBrowseFileINClick();">
+</div>
+<div id="pinpinSearchSpin" class="align-right" style="font-size:1.6em;margin-top:-.3em;margin-left:.8em"></div>
+</div><input id="fileINHidden" type="file" style="visibility:hidden" onchange="comparePinInputBrowseFileINChange()" accept=".csv"/>
+
+<!-- 
+<div class="control-group column-group">
+<label for="filePinGen" style="margin-right:2em;">File PinGen:&nbsp;&nbsp;</label>
+<div class="control append-button">
+<span><input id="filePinGen" name="filePinGen" style="width:15em;" type="text"></span>
+<input id="buttonBrowseFilePinGen" type="button" value="Browse" class="ink-button green" onclick="comparePinButtonBrowseFilePinGenClick();">
+</div>
+<div id="pinpinSearchSpin" class="align-right" style="font-size:1.6em;margin-top:-.3em;margin-left:.8em"></div>
+</div><input id="filePinGenHidden" type="file" style="visibility:hidden" onchange="comparePinInputBrowseFilePinGenChange()"/>
+ -->
+
+<br/>
+	<input id="buttonSubmit" type="button" value="Submit" class="ink-button green" onclick="comparePinButtonSubmitClick();">
+	<input id="buttonCancel" type="button" value="Cancel" class="ink-button red" onclick="goHome()">
+</form>
+        </li>
+        <li class="slide all-100">
+        	<div id="pinCompareJobId"></div><br/>
+			<div id="pinCompareAction">Uploading..</div> 
+			<br/><br/>
+			<div id="pinCompareProgressBar" class="ink-progress-bar" data-start-value="0">
+    			<span id="pinCompareProgressBarCaption" class="caption"><i class="fa fa-cog fa-spin"></i>&nbsp;&nbsp;Uploading...</span><div class="bar green"></div>
+			</div>
+			
+			<!-- 
+			<br/>You can close this page to continue your work<br/>
+			and find your job progress on <a onclick="menuJobList();">Job List</a> later
+			<br/><br/>
+			-->
+			
+			<div class="push-right"><button class="ink-button" onclick="goHome()">&nbsp;&nbsp;&nbsp;Close&nbsp;&nbsp;&nbsp;</button></div><br/>
+			&nbsp;<br/>
+        </li>
+    </ul>
+        
+        
+        
+        
+</div>
+

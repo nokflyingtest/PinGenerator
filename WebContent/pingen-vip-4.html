@@ -1,0 +1,91 @@
+<h2>Generate VIP PIN</h2>
+<div>
+<div id="pinGenVIPJobId"></div><br/>
+<div id="pinGenVIPAlert"></div>
+ 
+<form id="formPinGenVIP" class="ink-form">
+
+<div class="control-group required">
+<label for="batchNumber">Batch number:</label>
+<div class="control">
+<input id="batchNumberPrefix" name="batchNumberPrefix" class="ink-fv-required" style="width:5.5em;" type="text" placeholder="Prefix" maxlength="8" onkeypress='return isAlpha(event)' onpaste='return false;' >
+<input id="batchNumber" name="batchNumber" class="ink-fv-required ink-fv-number" style="width:9.25em;" type="text" placeholder="Batch Number" maxlength="6" onkeypress='return isNumber(event)' onpaste='return false;' >
+</div>
+</div>
+
+<div class="control-group required">
+<label for="serialNumber">Serial Number:</label>
+<div class="control">
+<input id="serialNumberPrefix" name="serialNumberPrefix" class="ink-fv-required" style="width:3.5em;" type="text" placeholder="Prefix" maxlength="3" onkeypress='return isAlpha(event)' onpaste='return false;' >
+<input id="serialNumber" name="serialNumber" class="ink-fv-required ink-fv-number" style="width:11.25em;" type="text" placeholder="Serial Number" maxlength="9" onkeypress='return isNumber(event)' onpaste='return false;' >
+</div>
+</div>
+
+<br/><br/>
+
+<div id="formPinGenVIPPins" class="control-group">
+	<label for="pin">VIP Pin:</label><i id="pinGenVIPPlus" class="fa fa-plus-square" style="font-size:1.3em;color:green;margin-top:-.3em;margin-left:8.1em;cursor:pointer;cursor:hand;" onclick="pinGenVIPButtonPlusClick(5)"></i>
+	<div class="control"><input id="pinCount" name="pinCount" style="width:15em;" type="hidden" value="5"></div>
+<div id="pinInput">
+
+<div class="control-group column-group"><div class="control">
+<input id="pin1" name="pin1" style="width:15em;" type="text" placeholder="VIP Pin" maxlength="15" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'>
+</div>             
+<div id="pinSpin1" class="align-right" style="font-size:1.6em;margin-top:-.3em;margin-left:.8em"></div>
+</div>
+<div class="control-group column-group"><div class="control">
+<input id="pin2" name="pin2" style="width:15em;" type="text" placeholder="VIP Pin" maxlength="15" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'>
+</div>                
+<div id="pinSpin2" class="align-right" style="font-size:1.6em;margin-top:-.3em;margin-left:.8em"></div>
+</div>
+<div class="control-group column-group"><div class="control">
+<input id="pin3" name="pin3" style="width:15em;" type="text" placeholder="VIP Pin" maxlength="15" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'>
+</div>                
+<div id="pinSpin3" class="align-right" style="font-size:1.6em;margin-top:-.3em;margin-left:.8em"></div>
+</div>
+<div class="control-group column-group"><div class="control">
+<input id="pin4" name="pin4" style="width:15em;" type="text" placeholder="VIP Pin" maxlength="15" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'>
+</div>                
+<div id="pinSpin4" class="align-right" style="font-size:1.6em;margin-top:-.3em;margin-left:.8em"></div>
+</div>
+<div class="control-group column-group"><div class="control">
+<input id="pin5" name="pin5" style="width:15em;" type="text" placeholder="VIP Pin" maxlength="15" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'>
+</div>                
+<div id="pinSpin5" class="align-right" style="font-size:1.6em;margin-top:-.3em;margin-left:.8em"></div>
+</div>
+        
+</div>
+<i id="pinGenVIPPlus" class="fa fa-plus-square" style="font-size:1.3em;color:green;margin-top:-.3em;margin-left:10.8em;cursor:pointer;cursor:hand;" onclick="pinGenVIPButtonPlusClick(5)"></i>
+</div>
+
+<br/>
+	<div id="pinGenVIPButton">
+        <input id="buttonCAM" type="button" value="Generate and Map VIP PINs" class="ink-button green" onclick="pinGenVIP4ButtonGAMClick()">
+		<input id="buttonCancel" type="button" value="Cancel" class="ink-button red" onclick="goHome()">
+	</div>
+<br/><br/>
+
+</form>
+		
+		
+		
+		
+		
+</div>
+<div class="ink-shade fade">
+    <div id="formPinGenVIPConfirm" class="ink-modal fade" data-trigger="#formPinGenVIPConfirmTrigger" data-width="500px" data-height="400px" role="dialog" aria-hidden="true" aria-labelled-by="modal-title">
+        <div class="modal-header">
+            <!-- <button class="modal-close ink-dismiss"></button>  -->
+            <h2 id="modal-title">Generate VIP PINs</h2>
+        </div>
+        <div class="modal-body" id="modalContent">
+            <h3>Please confirm</h3>
+            <br/>
+            Do you really want to Compare and Map VIP PINs?
+        </div>
+        <div class="modal-footer">
+        	<div class="push-left"><button class="ink-button ink-dismiss green" onclick="pinGenVIP4ButtonConfirmClick()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></div>
+            <div class="push-right"><button class="ink-button ink-dismiss red">&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;</button></div>
+        </div>
+    </div>
+</div>
